@@ -1,10 +1,14 @@
 <div class="jumbotron center">
 	<h1>Pinteresting</h1>
 	<span class="glyphicon glyphicon-star"></span> 
+	
+	<% if user_signed_in? %>
+	Welcome to this great app
+	<% else %>
 	<div class="row">
-		  
+		  <div class="col-xs-6 padding"><%= link_to 'Sign up', new_user_registration_path, class:"btn btn-warning btn-lg"%></div>
+		  <div class="col-xs-6 padding"><%= link_to 'Log in', new_user_session_path, class:"btn btn-danger btn-lg"%></div>
+	</div>
+	<% end %>
 
-  <div class="col-xs-6 padding"><%= link_to 'sign up', 'http://www.google.com', class:"btn btn-warning btn-lg"%></div>
-  <div class="col-xs-6 padding"><%= link_to 'go 2 hell', '#', class:"btn btn-danger btn-lg"%></div>
-</div>
 </div>
